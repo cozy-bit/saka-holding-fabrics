@@ -51,7 +51,7 @@ export function NotFoundPage() {
           <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 text-center">
             Популярные разделы сайта
           </div>
-          <div className="grid grid-cols-2 gap-3 text-xs font-bold text-gray-700">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs font-bold text-gray-700">
             <Link
               to="/calculator"
               className="flex items-center gap-2 p-2.5 rounded-xl bg-white hover:bg-amber-50 hover:text-[#D9B777] transition-colors border border-gray-100 shadow-xs"

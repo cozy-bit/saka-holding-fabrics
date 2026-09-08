@@ -75,8 +75,56 @@ export function OrderDetailPage() {
           Состав заказа
         </h2>
 
-        {/* Card Container */}
-        <div className="w-full overflow-x-auto">
+        {/* Mobile View: Clean cards */}
+        <div className="block md:hidden space-y-4">
+          {items.map((item) => (
+            <div
+              key={item.id}
+              className="bg-[#F7F8FA] rounded-2xl p-4 border border-gray-100/80 space-y-3 shadow-xs"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-gray-100 shadow-xs">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-sm font-bold text-[#1B222D] leading-tight truncate">
+                    {item.title}
+                  </h4>
+                  <div className="text-xs font-semibold text-gray-400 mt-1">
+                    Цена за метр: <span className="text-[#1B222D] font-bold">{item.price}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2 pt-2 border-t border-gray-200/60 text-xs">
+                <div>
+                  <span className="block text-gray-400 font-medium">Рулонов:</span>
+                  <span className="font-bold text-[#1B222D]">{item.rolls}</span>
+                </div>
+                <div>
+                  <span className="block text-gray-400 font-medium">Пачек:</span>
+                  <span className="font-bold text-[#1B222D]">{item.packs}</span>
+                </div>
+                <div>
+                  <span className="block text-gray-400 font-medium">Вес:</span>
+                  <span className="font-bold text-[#1B222D]">{item.weight} кг</span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between pt-2 border-t border-gray-200/60">
+                <span className="text-xs font-bold text-gray-400 uppercase">Сумма позиции:</span>
+                <span className="text-base font-black text-[#D9B777]">{item.sum}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop View: Table Container */}
+        <div className="hidden md:block w-full overflow-x-auto">
           <div className="min-w-[820px] bg-[#F7F8FA] rounded-3xl p-6 sm:p-8 border border-gray-100">
             {/* Column Headers */}
             <div className="grid grid-cols-[280px_100px_120px_120px_140px_1fr] text-xs font-semibold text-gray-400 pb-4">
