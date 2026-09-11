@@ -44,7 +44,7 @@ export default function LeadFormHero() {
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="+7 (___) ___-__-__"
+              placeholder="+992 __-___-__-__"
               className="flex-1 bg-[#1a252d] border border-[#2a3742] sm:border-r-0 sm:border-l-0 px-4 py-3.5 text-white placeholder-[#7c8891] text-sm focus:outline-none focus:ring-1 focus:ring-[#e7b876]"
             />
             <input
