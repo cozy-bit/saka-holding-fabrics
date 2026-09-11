@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import buildingImg from "./img/office.png";
 import cert1 from "./img/cert1.png";
@@ -44,10 +45,10 @@ function Hero() {
           </li>
         </ul>
 
-        <button className="group flex w-fit items-center gap-3 rounded-full bg-[#cba15d] px-6 py-3 font-medium text-white transition-colors hover:bg-[#b78e4c]">
+        <Link to="/catalog" className="group flex w-fit items-center gap-3 rounded-full bg-[#cba15d] px-6 py-3 font-medium text-white transition-colors hover:bg-[#b78e4c]">
           Смотреть каталог
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </button>
+        </Link>
       </div>
     </section>
   );
