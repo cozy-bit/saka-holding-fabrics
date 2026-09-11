@@ -193,7 +193,7 @@
 /* ==================== БЛОК 3: ПРЕИМУЩЕСТВА (MISSION) - С ФОНОМ И ВОЛНОЙ ==================== */
 .missionCard {
 background-color: #f8f9fa;
-  background-image: url('./src/assets/shukrullo/about/01-factory-main.png'); /* Укажи реальный путь к файлу */
+  background-image: url('../../assets/shukrullo/about/01-factory-main.png');
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;

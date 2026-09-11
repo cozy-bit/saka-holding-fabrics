@@ -1,6 +1,16 @@
 import { useState } from "react";
 import styles from "./NewsPage.module.css";
 
+// Импорт изображений для корректной сборки Vite и Vercel
+import newsImg1 from "../../assets/shukrullo/news/01-rectangle-40.png";
+import newsImg2 from "../../assets/shukrullo/news/02-rectangle-42.png";
+import newsImg3 from "../../assets/shukrullo/news/03-rectangle-50.png";
+import newsImg4 from "../../assets/shukrullo/news/04-rectangle-44.png";
+import newsImg5 from "../../assets/shukrullo/news/05-rectangle-51.png";
+import newsImg8 from "../../assets/shukrullo/news/08-rectangle-15.png";
+import newsImg9 from "../../assets/shukrullo/news/09-rectangle-9.png";
+import newsImg11 from "../../assets/shukrullo/news/11-rectangle-11.png";
+
 // ---------- НОВОСТИ ----------
 const initialNews = [
   {
@@ -8,57 +18,57 @@ const initialNews = [
     title: "Пример текста для заголовка новости",
     desc: "Здесь будет находиться небольшое триггерное описание или краткий дискриптор новости",
     date: "31.03.2022",
-    img: "src/assets/shukrullo/News/01-rectangle-40.png",
+    img: newsImg1,
   },
   {
     id: 2,
     title: "Пример текста для заголовка новости",
     desc: "Здесь будет находиться небольшое триггерное описание или краткий дискриптор новости",
     date: "31.03.2022",
-    img: "src/assets/shukrullo/News/09-rectangle-9.png",
+    img: newsImg9,
   },
   {
     id: 3,
     title: "Пример текста для заголовка новости",
     desc: "Здесь будет находиться небольшое триггерное описание или краткий дискриптор новости",
     date: "31.03.2022",
-    img: "src/assets/shukrullo/News/11-rectangle-11.png",
+    img: newsImg11,
   },
   {
     id: 4,
     title: "Пример текста для заголовка новости",
     desc: "Здесь будет находиться небольшое триггерное описание или краткий дискриптор новости",
     date: "31.03.2022",
-    img: "src/assets/shukrullo/News/08-rectangle-15.png",
+    img: newsImg8,
   },
   {
     id: 5,
     title: "Пример текста для заголовка новости",
     desc: "Здесь будет находиться небольшое триггерное описание или краткий дискриптор новости",
     date: "31.03.2022",
-    img: "src/assets/shukrullo/News/09-rectangle-9.png",
+    img: newsImg9,
   },
   {
     id: 6,
     title: "Пример текста для заголовка новости",
     desc: "Здесь будет находиться небольшое триггерное описание или краткий дискриптор новости",
     date: "31.03.2022",
-    img: "src/assets/shukrullo/News/01-rectangle-40.png",
+    img: newsImg1,
   },
 ];
 
 // ---------- СТАТЬИ ----------
 const allArticles = [
-  { id: 1, category: "Выбор материала", title: "Пример текста для заголовка статьи (Выбор материала 1)", date: "31.03.2022", img: "src/assets/shukrullo/News/04-rectangle-44.png" },
-  { id: 2, category: "Выбор материала", title: "Пример текста для заголовка статьи (Выбор материала 2)", date: "31.03.2022", img: "src/assets/shukrullo/News/03-rectangle-50.png" },
-  { id: 3, category: "Ткани",            title: "Всё о текстуре и плотности современных тканей",            date: "28.03.2022", img: "src/assets/shukrullo/News/02-rectangle-42.png" },
-  { id: 4, category: "Ткани",            title: "Натуральные и синтетические волокна: в чем разница",        date: "25.03.2022", img: "src/assets/shukrullo/News/05-rectangle-51.png" },
-  { id: 5, category: "Уход",             title: "Правильный уход за текстилем продлевает срок службы",       date: "20.03.2022", img: "src/assets/shukrullo/News/01-rectangle-40.png" },
-  { id: 6, category: "Уход",             title: "Как хранить сезонные ткани и одежду дома",                  date: "18.03.2022", img: "src/assets/shukrullo/News/01-rectangle-40.png" },
-  { id: 7, category: "Стирка",           title: "Температурные режимы стирки для разных видов тканей",        date: "15.03.2022", img: "src/assets/shukrullo/News/01-rectangle-40.png" },
-  { id: 8, category: "Стирка",           title: "Выбор безопасных моющих средств и гелей",                   date: "12.03.2022", img: "src/assets/shukrullo/News/01-rectangle-40.png" },
-  { id: 9, category: "Подбор цвета",     title: "Гармония оттенков в интерьере и текстиле",                  date: "10.03.2022", img: "src/assets/shukrullo/News/01-rectangle-40.png" },
-  { id: 10, category: "Подбор цвета",    title: "Трендовые палитры сезона для текстильных изделий",          date: "05.03.2022", img: "src/assets/shukrullo/News/01-rectangle-40.png" },
+  { id: 1, category: "Выбор материала", title: "Пример текста для заголовка статьи (Выбор материала 1)", date: "31.03.2022", img: newsImg4 },
+  { id: 2, category: "Выбор материала", title: "Пример текста для заголовка статьи (Выбор материала 2)", date: "31.03.2022", img: newsImg3 },
+  { id: 3, category: "Ткани",            title: "Всё о текстуре и плотности современных тканей",            date: "28.03.2022", img: newsImg2 },
+  { id: 4, category: "Ткани",            title: "Натуральные и синтетические волокна: в чем разница",        date: "25.03.2022", img: newsImg5 },
+  { id: 5, category: "Уход",             title: "Правильный уход за текстилем продлевает срок службы",       date: "20.03.2022", img: newsImg1 },
+  { id: 6, category: "Уход",             title: "Как хранить сезонные ткани и одежду дома",                  date: "18.03.2022", img: newsImg1 },
+  { id: 7, category: "Стирка",           title: "Температурные режимы стирки для разных видов тканей",        date: "15.03.2022", img: newsImg1 },
+  { id: 8, category: "Стирка",           title: "Выбор безопасных моющих средств и гелей",                   date: "12.03.2022", img: newsImg1 },
+  { id: 9, category: "Подбор цвета",     title: "Гармония оттенков в интерьере и текстиле",                  date: "10.03.2022", img: newsImg1 },
+  { id: 10, category: "Подбор цвета",    title: "Трендовые палитры сезона для текстильных изделий",          date: "05.03.2022", img: newsImg1 },
 ];
 
 const additionalImages = [
@@ -102,7 +112,7 @@ export default function NewsPage() {
           {/* Hero-баннер */}
           <div className={styles.hero}>
             <img
-              src="src/assets/shukrullo/News/01-rectangle-40.png"
+              src={newsImg1}
               alt="Флаги Saka Tekstil"
               className={styles.heroImg}
             />
