@@ -13,9 +13,9 @@ import { OrdersPage } from '../pages/Profile/OrdersPage';
 import { OrderDetailPage } from '../pages/Profile/OrderDetailPage';
 
 // 3. Шукрулло
-import { AboutPage } from '../pages/About/AboutPage';
-import { NewsPage } from '../pages/News/NewsPage';
-import { ArticlePage } from '../pages/Article/ArticlePage';
+import  AboutPage  from '../pages/About/AboutPage';
+import  NewsPage  from '../pages/News/NewsPage';
+import ArticlePage from '../pages/Article/ArticlePage';
 
 // 4. Али
 import { DeliveryPage } from '../pages/Delivery/DeliveryPage';
