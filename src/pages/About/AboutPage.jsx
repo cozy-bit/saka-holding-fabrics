@@ -1,20 +1,33 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./AboutPage.module.css";
 
+// Импорт изображений для корректной сборки Vite и Vercel
+import heroFlags from "../../assets/shukrullo/about/02-rectangle-23.png";
+import fabricOpenEnd from "../../assets/shukrullo/about/03-rectangle-40.png";
+import fabricPenye from "../../assets/shukrullo/about/04-rectangle-41.png";
+import fabricExclusive from "../../assets/shukrullo/about/05-rectangle-42.png";
+import cert1 from "../../assets/shukrullo/about/06-image-8.png";
+import cert2 from "../../assets/shukrullo/about/07-image-9.png";
+import cert3 from "../../assets/shukrullo/about/08-image-10.png";
+import recent1 from "../../assets/shukrullo/about/09-rectangle-31.png";
+import recent2 from "../../assets/shukrullo/about/10-rectangle-33.png";
+import recent3 from "../../assets/shukrullo/about/11-rectangle-35.png";
+import recent4 from "../../assets/shukrullo/about/12-rectangle-37.png";
+
 // ---------- ДАННЫЕ ----------
 const FABRICS = [
   {
-    img: "./src/assets/shukrullo/about/03-rectangle-40.png",
+    img: fabricOpenEnd,
     title: "Open end",
     text: "Бюджетный трикотаж, имеет ворсистую и шероховатую поверхность из-за коротких волокон.",
   },
   {
-    img: "src/assets/shukrullo/about/04-rectangle-41.png",
+    img: fabricPenye,
     title: "Пенье компакт",
     text: "Высшее качество трикотажной ткани, имеет гладкую поверхность без ворсинок.",
   },
   {
-    img: "src/assets/shukrullo/about/05-rectangle-42.png",
+    img: fabricExclusive,
     title: "Пенье компакт Плюс-EXCLUSIVE",
     text: "Полотно вяжется американскими нитками и окрашено немецкими красками высшего качества.",
   },
@@ -30,15 +43,15 @@ const MISSIONS = [
 ];
 
 const CERTS = [
-    {
-        img: "src/assets/shukrullo/about/06-image-8.png"
-    },
-    {
-        img: "src/assets/shukrullo/about/07-image-9.png"
-    },
-    {
-        img: "src/assets/shukrullo/about/08-image-10.png"
-    },
+  {
+    img: cert1,
+  },
+  {
+    img: cert2,
+  },
+  {
+    img: cert3,
+  },
 ];
 
 const REVIEWS = [
@@ -49,10 +62,10 @@ const REVIEWS = [
 ];
 
 const RECENT = [
-  { price: "11,4$",   img: "src/assets/shukrullo/about/09-rectangle-31.png" },
-  { price: "13$",     img: "src/assets/shukrullo/about/10-rectangle-33.png" },
-  { price: "122,4$",  img: "src/assets/shukrullo/about/11-rectangle-35.png" },
-  { price: "13,84$",  img: "src/assets/shukrullo/about/12-rectangle-37.png" },
+  { price: "11,4$",   img: recent1 },
+  { price: "13$",     img: recent2 },
+  { price: "122,4$",  img: recent3 },
+  { price: "13,84$",  img: recent4 },
 ];
 
 // ---------- КОМПОНЕНТ ----------
@@ -126,7 +139,7 @@ export default function AboutPage() {
             <div className={styles.heroImgWrap}>
               <img
                 className={styles.heroImg}
-                src="src/assets/shukrullo/about/02-rectangle-23.png"
+                src={heroFlags}
                 alt="Флаги Saka Tekstil"
               />
             </div>

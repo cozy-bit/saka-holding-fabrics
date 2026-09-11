@@ -1,4 +1,6 @@
 import styles from './ArticlePage.module.css';
+import buildingImg from '../../assets/shukrullo/news/01-rectangle-40.png';
+import flagsImg from '../../assets/shukrullo/news/09-rectangle-9.png';
 
 export default function ArticlePage() {
   return (
@@ -32,7 +34,7 @@ export default function ArticlePage() {
           <div className={styles.mediaBlock}>
             <div className={styles.imageWrap}>
               <img 
-                src="src/assets/shukrullo/News/01-rectangle-40.png" 
+                src={buildingImg} 
                 alt="Здание Saka Holding" 
                 className={styles.articleImg} 
               />
@@ -50,7 +52,7 @@ export default function ArticlePage() {
           <div className={`${styles.mediaBlock} ${styles.mediaBlockReverse}`}>
             <div className={styles.imageWrap}>
               <img 
-                src="src/assets/shukrullo/News/09-rectangle-9.png" 
+                src={flagsImg} 
                 alt="Флаги Saka Holding" 
                 className={styles.articleImg} 
               />

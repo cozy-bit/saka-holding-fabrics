@@ -11,25 +11,67 @@ export function OrdersPage() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 py-10">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 py-6 sm:py-10">
       {/* Navigation tabs */}
-      <div className="flex items-center gap-8 mb-8 border-b border-gray-100 pb-3">
+      <div className="flex items-center gap-6 sm:gap-8 mb-6 sm:mb-8 border-b border-gray-100 pb-3">
         <Link
           to="/profile"
-          className="text-2xl sm:text-3xl font-bold text-gray-400 hover:text-gray-700 transition-colors"
+          className="text-xl sm:text-3xl font-bold text-gray-400 hover:text-gray-700 transition-colors"
         >
           Личные данные
         </Link>
         <Link
           to="/profile/orders"
-          className="text-2xl sm:text-3xl font-black text-[#1B222D] border-b-2 border-[#1B222D] pb-3 -mb-3.5"
+          className="text-xl sm:text-3xl font-black text-[#1B222D] border-b-2 border-[#1B222D] pb-3 -mb-3.5"
         >
           Ваши заказы
         </Link>
       </div>
 
-      {/* Orders List Container */}
-      <div className="w-full overflow-x-auto pb-4">
+      {/* Mobile View: Exact match with Amirkhon-orders-mobile.png */}
+      <div className="block md:hidden">
+        {/* Table Header */}
+        <div className="grid grid-cols-[45px_75px_110px_1fr] items-center px-4 py-2 text-xs font-bold text-gray-400">
+          <div>№ заказа</div>
+          <div>Дата заказа</div>
+          <div>Статус</div>
+          <div className="text-right">Сумма</div>
+        </div>
+
+        {/* Rows */}
+        <div className="space-y-3 mt-1">
+          {orders.map((order) => (
+            <Link
+              key={order.id}
+              to={`/profile/orders/${order.id}`}
+              className="grid grid-cols-[45px_75px_110px_1fr] items-center px-4 py-3.5 rounded-2xl bg-[#F7F8FA] hover:bg-[#F2F4F7] transition-all border border-gray-100/80 active:scale-[0.99]"
+            >
+              <div className="text-sm font-bold text-[#1B222D]">
+                {order.id}
+              </div>
+              <div className="text-xs font-semibold text-gray-600">
+                {order.date}
+              </div>
+              <div>
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#D9B777] text-white font-bold text-[11px] tracking-wide shadow-xs">
+                  {order.status === 'Принят' ? (
+                    <Check size={11} className="stroke-[3]" />
+                  ) : (
+                    <Clock size={11} />
+                  )}
+                  <span>{order.status}</span>
+                </span>
+              </div>
+              <div className="text-xs font-black text-[#1B222D] text-right truncate">
+                {order.sum}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Detailed View */}
+      <div className="hidden md:block w-full overflow-x-auto pb-4">
         <div className="min-w-[860px]">
           {/* Table Headers */}
           <div className="grid grid-cols-[80px_110px_130px_120px_180px_120px_1fr] items-center px-6 py-3 text-xs font-semibold text-gray-400">
