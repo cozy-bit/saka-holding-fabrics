@@ -1,4 +1,8 @@
 import styles from "./DeliveryPage.module.css";
+import fabricBlue from "../../assets/ali/delivery/04-rectangle-78.png";
+import fabricWhite from "../../assets/ali/delivery/05-rectangle-79.png";
+import fabricOrange from "../../assets/ali/delivery/06-rectangle-80.png";
+import fabricGreen from "../../assets/ali/delivery/07-rectangle-81.png";
 
 const products = [
   {
@@ -6,28 +10,28 @@ const products = [
     name: "Кулинарная гладь",
     price: "11,4$",
     size: "180 см",
-    image: "/fabric-blue.jpg",
+    image: fabricBlue,
   },
   {
     id: 2,
     name: "Кулинарная гладь",
     price: "13$",
     size: "180 см",
-    image: "/fabric-white.jpg",
+    image: fabricWhite,
   },
   {
     id: 3,
     name: "Кулинарная гладь",
     price: "12,24$",
     size: "180 см",
-    image: "/fabric-orange.jpg",
+    image: fabricOrange,
   },
   {
     id: 4,
     name: "Кулинарная гладь",
     price: "13,84$",
     size: "180 см",
-    image: "/fabric-green.jpg",
+    image: fabricGreen,
   },
 ];
 
