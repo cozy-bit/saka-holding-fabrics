@@ -1,18 +1,794 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
-  text-align: center;
+.page {
+  background: #f7f7f6;
+  min-height: 100vh;
+  padding: 25px 0 70px;
+  color: #202a35;
 }
 
-.title {
-  font-size: 32px;
+.container {
+  width: min(1140px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.breadcrumbs {
+  color: #a7aaad;
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.breadcrumbs span {
+  margin: 0 8px;
+  color: #c6c7c8;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 25px;
+  align-items: start;
+}
+
+.content h1 {
+  font-size: 27px;
+  line-height: 1.2;
+  margin: 0 0 22px;
   font-weight: 700;
-  color: var(--color-primary, #1A3B6B);
+}
+
+.deliveryCard,
+.transportCard,
+.paymentCard {
+  background: #ffffff;
+  border-radius: 9px;
+  border: 1px solid #ededeb;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 20px rgba(30, 40, 50, 0.025);
+}
+
+.deliveryCard {
+  min-height: 105px;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deliveryCard h2,
+.transportCard h2 {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.deliveryCard p,
+.transportCard p {
+  color: #7e8489;
+  font-size: 9px;
+  line-height: 1.55;
+  margin: 5px 0;
+}
+
+.deliveryCard strong {
+  color: #535b62;
+}
+
+/* Коробки */
+
+.boxes {
+  position: relative;
+  width: 170px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.box {
+  position: absolute;
+  background: linear-gradient(
+    145deg,
+    #d5a574,
+    #b98251
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(90, 55, 30, 0.12),
+    0 5px 12px rgba(80, 50, 25, 0.08);
+}
+
+.box:nth-child(1) {
+  width: 63px;
+  height: 48px;
+  right: 12px;
+  bottom: 3px;
+}
+
+.box:nth-child(2) {
+  width: 58px;
+  height: 44px;
+  left: 35px;
+  bottom: 5px;
+}
+
+.box:nth-child(3) {
+  width: 58px;
+  height: 53px;
+  right: 45px;
+  top: 5px;
+}
+
+/* Транспорт */
+
+.transportCard {
+  min-height: 180px;
+  padding: 23px 24px 0;
+  overflow: hidden;
+}
+
+.transportCard p {
+  max-width: 560px;
+}
+
+.car {
+  position: relative;
+  width: 390px;
+  height: 85px;
+  margin: 5px 0 0 20px;
+}
+
+.carBody {
+  position: absolute;
+  left: 10px;
+  bottom: 20px;
+
+  width: 330px;
+  height: 52px;
+
+  border-radius: 30px 65px 10px 10px;
+
+  background: linear-gradient(
+    160deg,
+    #fdfdfd,
+    #c9c9c9
+  );
+
+  border: 2px solid #bcbcbc;
+
+  color: #24a85a;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  padding: 13px 0 0 210px;
+}
+
+.carBody::before {
+  content: "";
+  position: absolute;
+
+  left: 110px;
+  top: -25px;
+
+  width: 100px;
+  height: 27px;
+
+  border-radius: 50px 50px 0 0;
+
+  background: #e8e8e8;
+
+  border: 2px solid #bcbcbc;
+  border-bottom: 0;
+}
+
+.carBody::after {
+  content: "";
+
+  position: absolute;
+
+  right: 8px;
+  top: 9px;
+
+  width: 35px;
+  height: 22px;
+
+  background: #2ea761;
+
+  border-radius: 3px;
+
+  opacity: 0.25;
+}
+
+.wheelOne,
+.wheelTwo {
+  position: absolute;
+
+  bottom: 5px;
+
+  width: 31px;
+  height: 31px;
+
+  border-radius: 50%;
+
+  background: #252a2e;
+
+  border: 7px solid #73777a;
+}
+
+.wheelOne {
+  left: 55px;
+}
+
+.wheelTwo {
+  right: 48px;
+}
+
+/* Вопросы */
+
+.questions {
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255, 255, 255, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #202e3b,
+      #14202c
+    );
+
+  color: #fff;
+
+  border-radius: 10px;
+
+  padding: 27px 24px;
+
+  position: sticky;
+  top: 110px;
+}
+
+.questions h2 {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.questions > p {
+  color: #aab1b7;
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.questions form {
+  display: grid;
+  gap: 9px;
+}
+
+.questions input {
+  height: 38px;
+
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  border-radius: 7px;
+
+  background: #293845;
+
+  color: #fff;
+
+  padding: 0 12px;
+
+  font-size: 9px;
+}
+
+.questions input::placeholder {
+  color: #8d969e;
+}
+
+.questions input:focus {
+  outline: 1px solid #dec083;
+}
+
+.questions button {
+  height: 38px;
+
+  border-radius: 22px;
+
+  background: #dec083;
+  color: #1d2934;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 17px;
+
+  transition: 0.2s;
+}
+
+.questions button:hover {
+  background: #ecd19a;
+  transform: translateY(-1px);
+}
+
+.questions small {
+  display: block;
+
+  color: #697681;
+
+  text-align: center;
+
+  font-size: 7px;
+
+  line-height: 1.5;
+
+  margin-top: 13px;
+}
+
+/* Оплата */
+
+.payment {
+  margin-top: 65px;
+}
+
+.payment > h2 {
+  font-size: 23px;
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  color: #858b90;
+  font-size: 9px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.paymentCard {
+  min-height: 105px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 18px 25px;
+}
+
+.paymentCard h3 {
+  font-size: 13px;
+  margin: 0 0 7px;
+}
+
+.paymentCard p {
+  color: #8b9094;
+  font-size: 8px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Банковская карта */
+
+.bankCard {
+  width: 135px;
+  height: 80px;
+
+  border-radius: 8px;
+
+  transform: rotate(-8deg);
+
+  background:
+    linear-gradient(
+      145deg,
+      #596f7e,
+      #263c4a
+    );
+
+  color: #fff;
+
+  padding: 11px;
+
+  position: relative;
+
+  box-shadow:
+    0 7px 15px rgba(0, 0, 0, 0.18);
+}
+
+.bankCard::before {
+  content: "";
+
+  position: absolute;
+
+  top: 30px;
+  left: 11px;
+
+  width: 23px;
+  height: 16px;
+
+  border-radius: 3px;
+
+  background: #d4b36b;
+}
+
+.bankCard span {
+  font-size: 7px;
+  display: block;
+}
+
+.bankCard strong {
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+
+  font-size: 13px;
+}
+
+/* Информационный блок */
+
+.infoBlock {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-top: 40px;
+
+  min-height: 135px;
+
+  border-radius: 10px;
+
+  padding: 28px 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #fff;
+
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(255,255,255,.05),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #202e3b,
+      #15212d
+    );
+}
+
+.infoBlock h2 {
+  font-size: 18px;
+  line-height: 1.35;
+  margin: 0 0 14px;
+}
+
+.infoBlock p {
+  color: #8d99a2;
+  font-size: 8px;
+  margin: 0;
+}
+
+.infoBlock p strong {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.socials a {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #2c4251;
+
+  color: #fff;
+
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.socials a:hover {
+  background: #dec083;
+  color: #182430;
+}
+
+.socials span {
+  color: #8e9aa3;
+  font-size: 7px;
+  line-height: 1.4;
+  margin-left: 7px;
+}
+
+/* Недавно просмотренные */
+
+.recent {
+  margin-top: 65px;
+}
+
+.recentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.recentHeader h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.arrows {
+  display: flex;
+  gap: 7px;
+}
+
+.arrows button {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  border: 1px solid #e9e9e7;
+
+  color: #202a35;
+
+  transition: 0.2s;
+}
+
+.arrows button:hover {
+  background: #dec083;
+}
+
+.products {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.product {
+  background: #fff;
+
+  border-radius: 9px;
+
+  overflow: hidden;
+
+  border: 1px solid #ededeb;
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(25, 35, 45, 0.08);
+}
+
+.productImage {
+  width: 100%;
+  height: 155px;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.productContent {
+  padding: 12px;
+}
+
+.productContent h3 {
+  margin: 0 0 8px;
+
+  font-size: 10px;
+}
+
+.productPrice {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
   margin-bottom: 12px;
 }
 
-.text {
-  font-size: 15px;
-  color: #6b7280;
+.productPrice strong {
+  font-size: 12px;
+}
+
+.productPrice span {
+  color: #a1a4a7;
+  font-size: 7px;
+}
+
+.productContent button {
+  width: 100%;
+  height: 31px;
+
+  border: 0;
+
+  border-radius: 20px;
+
+  background: #dec083;
+
+  color: #202a35;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 13px;
+}
+
+.productContent button:hover {
+  background: #ecd19a;
+}
+
+/* Планшет */
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .questions {
+    position: static;
+    order: -1;
+  }
+
+  .products {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+/* Телефон */
+
+@media (max-width: 600px) {
+  .page {
+    padding-top: 15px;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .content h1 {
+    font-size: 23px;
+  }
+
+  .deliveryCard {
+    padding: 17px;
+
+    align-items: flex-start;
+  }
+
+  .deliveryCard p,
+  .transportCard p {
+    font-size: 8px;
+  }
+
+  .boxes {
+    width: 110px;
+    height: 80px;
+  }
+
+  .box:nth-child(1) {
+    width: 42px;
+    height: 34px;
+  }
+
+  .box:nth-child(2) {
+    width: 39px;
+    height: 30px;
+    left: 20px;
+  }
+
+  .box:nth-child(3) {
+    width: 40px;
+    height: 36px;
+    right: 30px;
+  }
+
+  .transportCard {
+    padding: 18px;
+  }
+
+  .car {
+    width: 100%;
+    transform: scale(0.8);
+    transform-origin: left bottom;
+    margin-bottom: -5px;
+  }
+
+  .payment {
+    margin-top: 45px;
+  }
+
+  .paymentCard {
+    padding: 15px;
+  }
+
+  .bankCard {
+    width: 105px;
+    height: 63px;
+  }
+
+  .infoBlock {
+    padding: 22px 18px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .infoBlock h2 {
+    font-size: 15px;
+  }
+
+  .products {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 9px;
+  }
+
+  .productImage {
+    height: 115px;
+  }
+
+  .productContent {
+    padding: 9px;
+  }
+
+  .productContent h3 {
+    font-size: 9px;
+  }
+
+  .productContent button {
+    font-size: 7px;
+  }
 }
