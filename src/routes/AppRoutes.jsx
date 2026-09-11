@@ -18,7 +18,7 @@ import { NewsPage } from '../pages/News/NewsPage';
 import { ArticlePage } from '../pages/Article/ArticlePage';
 
 // 4. Али
-import { DeliveryPage } from '../pages/Delivery/DeliveryPage';
+import DeliveryPage from "./../pages/Delivery/DeliveryPage";
 import { ContactsPage } from '../pages/Contacts/ContactsPage';
 
 // 404
